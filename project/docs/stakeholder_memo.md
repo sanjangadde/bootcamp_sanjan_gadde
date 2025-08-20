@@ -1,23 +1,24 @@
-# Stakeholder Memo — ESG Fund Transparency Analyzer  
+# Stakeholder Memo — Stock Correlation Explorer  
 
 ## Problem  
-Investors want confidence that ESG-labeled funds align with their stated sustainability goals. However, fund disclosures are often dense, inconsistent, and infrequent. As a result, many investors cannot easily see whether the holdings in a fund actually support its ESG mandate.  
+Retail investors often buy multiple stocks believing they are diversifying, but many of those stocks may move together due to sector exposure or broader market forces. Without a clear view of correlations, portfolios may be riskier than they appear.  
 
 ## Why It Matters  
-Misaligned holdings undermine investor trust and may expose portfolios to reputational or thematic risks. For socially conscious retail investors, a lack of transparency leads to uncertainty and potential misallocation of capital. A clear, comparable transparency score would help investors make more informed decisions when selecting funds.  
+Hidden correlations reduce diversification benefits and can amplify losses during market downturns. By identifying how closely stocks move together, investors can construct more resilient portfolios and make smarter allocation choices.  
 
 ## Proposed Solution  
-1. **Ingest fund holdings** (weights, tickers, sectors) from public disclosures.  
-2. **Join with ESG metrics** such as carbon intensity, controversy levels, and revenue from excluded sectors.  
-3. **Apply a scoring rubric** that produces a transparency score (0–100) with sub-scores for each criterion.  
-4. **Generate a scorecard** that highlights outlier holdings (e.g., high fossil fuel revenue, severe controversies) and explains why they conflict with the ESG label.  
+1. **Collect historical stock prices** for user-selected tickers (via Yahoo Finance or similar APIs).  
+2. **Calculate pairwise correlation coefficients** to quantify how each stock relates to others.  
+3. **Visualize correlations** in an easy-to-read heatmap and matrix.  
+4. **Summarize insights**, such as the most and least correlated stock pairs and the average portfolio correlation.  
 
 ## Stakeholder Impact  
-- **Retail Investors:** Gain a simple, data-backed score to compare ESG funds and identify potential “greenwashing.”  
-- **Financial Advisors:** Can incorporate transparency scores into client recommendations.  
-- **Fintech Platforms:** May integrate the analyzer as a feature to enhance user trust and differentiate their services.  
+- **Retail Investors:** Gain actionable insights into diversification, reducing unintentional overexposure.  
+- **Financial Advisors:** Can use the tool to illustrate diversification concepts to clients.  
+- **Students & Educators:** Provides a practical way to learn about correlation, risk, and portfolio theory.  
 
 ## Next Steps  
-- Develop a prototype notebook to demonstrate fund-level scoring.  
-- Expand data sources to include multiple ESG datasets.  
-- Test rubric flexibility so investors can adjust weights (e.g., stricter fossil fuel exclusions).  
+- Implement data ingestion from Yahoo Finance (`yfinance` library).  
+- Test correlation calculations on a sample portfolio (e.g., 10–20 stocks).  
+- Build heatmap visualizations and highlight key findings.  
+- Package results in a simple notebook/report for investor use.  

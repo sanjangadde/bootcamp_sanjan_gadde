@@ -1,42 +1,40 @@
-# ESG Fund Transparency Analyzer  
+# Stock Correlation Explorer  
 **Stage:** Problem Framing & Scoping (Stage 01)  
 
 ## Problem Statement  
-Many ESG-labeled (Environmental, Social, Governance) funds hold companies that conflict with their stated sustainability goals — such as firms with high carbon emissions, significant fossil fuel revenue, or repeated controversies. Investors who want their portfolios to reflect their values often cannot easily verify whether a fund’s holdings are consistent with its ESG label. This project addresses that gap by creating a tool that ingests fund holdings and benchmarks them against clear ESG metrics, producing a transparency score and flagging potential “greenwashing.”  
+Retail investors often build portfolios without realizing that many of their stocks move together due to underlying sector or market-wide forces. This reduces diversification benefits and increases portfolio risk. The Stock Correlation Explorer helps investors identify hidden correlations between stocks by calculating and visualizing pairwise correlation coefficients. By surfacing these relationships, investors can make better diversification decisions and avoid overexposure.  
 
 ## Stakeholder & User  
-- **Primary Stakeholder:** Socially conscious retail investors deciding which funds to purchase.  
-- **Secondary Stakeholders:** Financial advisors, fintech apps, and analysts concerned with sustainable investing.  
-- **Context:** Used when investors compare funds during portfolio selection or conduct periodic ESG reviews.  
+- **Primary Stakeholder:** Retail investors managing their own stock portfolios.  
+- **Secondary Stakeholders:** Financial advisors, investing clubs, and students learning portfolio theory.  
+- **Context:** Used during portfolio construction or review, when choosing which new stocks to add or evaluating existing diversification.  
 
 ## Useful Answer & Decision  
-- **Type:** Descriptive scoring with prescriptive signals (e.g., red flags).  
-- **Output:** A transparency score (0–100) with sub-scores for carbon intensity, controversies, and excluded sectors.  
-- **Artifact:** Scorecard and report (CSV/PDF) showing fund alignment and highlighting problematic holdings.  
+- **Type:** Descriptive analysis.  
+- **Output:** Correlation matrix and heatmap showing how closely different stocks move together.  
+- **Artifact:** Notebook or report with visualizations and summary metrics (e.g., average correlation, most/least correlated stock pairs).  
 
 ## Assumptions & Constraints  
-- Input data: fund holdings with tickers/weights; metrics joined from public ESG datasets.  
-- Analysis is holdings-based (no live market data needed).  
-- ESG definitions vary by jurisdiction; rubric focuses on transparency, not compliance with regulations.  
-- Must run quickly (seconds) on portfolios of ~1,000 holdings.  
-- Some data may be missing or stale between disclosure dates.  
+- Historical price data is available through Yahoo Finance (`yfinance` Python library) or Alpha Vantage (free API).  
+- Analysis will use daily adjusted closing prices over a chosen time horizon (e.g., 1–5 years).  
+- Only liquid, publicly traded equities are included; no private assets.  
+- Computation is lightweight and should run in seconds for portfolios up to ~50 stocks.  
 
 ## Known Unknowns / Risks  
-- Inconsistent disclosure frequency across funds may reduce accuracy.  
-- Data quality varies across regions and vendors.  
-- Ticker/identifier mismatches may cause gaps in scoring.  
-- Shifts in ESG standards (e.g., new exclusions) may require rubric updates.  
+- Correlations can change over time; past relationships may not hold in the future.  
+- Results depend on the selected time window (short vs. long term).  
+- Market shocks (e.g., financial crises) may temporarily inflate correlations.  
 
 ## Lifecycle Mapping  
 Goal → Stage → Deliverable  
 - Define problem → Problem Framing & Scoping (Stage 01) → Scoping paragraph + README.md  
-- Build data pipeline → Data Collection (Stage 02) → Holdings + ESG metrics schema  
-- Design scoring rubric → Modeling (Stage 03) → Fund transparency scoring system  
-- Deliver results → Delivery (Stage 04) → Scorecard reports and stakeholder memo  
+- Collect data → Data Collection (Stage 02) → Price history for selected tickers (CSV or API fetch)  
+- Analyze relationships → Modeling (Stage 03) → Correlation coefficients + heatmap  
+- Share results → Delivery (Stage 04) → Report or notebook with visuals and key takeaways  
 
 ## Repo Plan  
 Folders: `/data/`, `/src/`, `/notebooks/`, `/docs/`  
-Cadence: weekly commits aligned with lifecycle milestones.  
+Cadence: weekly commits aligned with lifecycle stages.  
 
 ## Data Storage
 Folders: `/data/raw/`, `/data/processed/`  
