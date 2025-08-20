@@ -119,5 +119,17 @@ dependencies:
   - zstd=1.5.6=hfb09047_0
   - pip:
       - beautifulsoup4==4.13.4
+      - curl-cffi==0.13.0
+      - frozendict==2.4.6
+      - joblib==1.5.1
+      - multitasking==0.0.12
+      - peewee==3.18.2
+      - protobuf==6.32.0
+      - scikit-learn==1.7.1
+      - scipy==1.16.1
       - soupsieve==2.7
+      - threadpoolctl==3.6.0
       - typing-extensions==4.14.1
+      - websockets==15.0.1
+      - yfinance==0.2.65
+prefix: /Users/sanjangadde/miniconda3/envs/conda_env
