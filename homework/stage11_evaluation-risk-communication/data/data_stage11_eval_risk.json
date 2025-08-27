@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "minWidth": 40,
+      "download": false,
+      "formatter": "rowSelection",
+      "titleFormatter": "rowSelection",
+      "resizable": true,
+      "headerSort": false,
+      "width": 53
+    },
+    {
+      "field": "date",
+      "title": "date",
+      "minWidth": 40,
+      "resizable": true,
+      "sorter": "string",
+      "headerSort": true,
+      "width": 91
+    },
+    {
+      "field": "segment",
+      "title": "segment",
+      "minWidth": 40,
+      "resizable": true,
+      "sorter": "string",
+      "headerSort": true,
+      "width": 114
+    },
+    {
+      "field": "x_feature",
+      "title": "x_feature",
+      "minWidth": 40,
+      "resizable": true,
+      "sorter": "number",
+      "headerSort": true,
+      "width": 181
+    },
+    {
+      "field": "y_target",
+      "title": "y_target",
+      "minWidth": 40,
+      "resizable": true,
+      "sorter": "number",
+      "headerSort": true,
+      "width": 589
+    }
+  ]
+}

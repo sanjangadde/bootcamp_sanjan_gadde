@@ -1,0 +1,27 @@
+{
+  "fields": [
+    {
+      "name": "date",
+      "type": "date",
+      "format": "default"
+    },
+    {
+      "name": "segment",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "x_feature",
+      "type": "number",
+      "format": "default"
+    },
+    {
+      "name": "y_target",
+      "type": "number",
+      "format": "default"
+    }
+  ],
+  "missingValues": [
+    ""
+  ]
+}
